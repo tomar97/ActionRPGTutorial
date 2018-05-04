@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4544911667577518, guid: 63112f64d16c75b4fbc86e7ba9ac5d6b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 18.2
+      value: 18.68
       objectReference: {fileID: 0}
     - target: {fileID: 4544911667577518, guid: 63112f64d16c75b4fbc86e7ba9ac5d6b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -15.6
+      value: -15.18
       objectReference: {fileID: 0}
     - target: {fileID: 4544911667577518, guid: 63112f64d16c75b4fbc86e7ba9ac5d6b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -325,3 +325,70 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67749c93d9f3a4443a263867e59b134f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1943360474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1943360477}
+  - component: {fileID: 1943360476}
+  - component: {fileID: 1943360475}
+  m_Layer: 0
+  m_Name: House Entry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1943360475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943360474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50eb6d6281b302f47838dd9183013be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: TestHouse
+--- !u!61 &1943360476
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943360474}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1943360477
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943360474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.4, y: -12.5, z: -0.25195312}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
