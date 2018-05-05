@@ -145,8 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  timeBetweenMove: 3
-  timeToMove: 4
+  timeBetweenMove: 2
+  timeToMove: 2
+  waitToReload: 2
 --- !u!50 &31446713
 Rigidbody2D:
   serializedVersion: 4
@@ -404,7 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   timeBetweenMove: 2
-  timeToMove: 1
+  timeToMove: 2
+  waitToReload: 2
 --- !u!50 &654010565
 Rigidbody2D:
   serializedVersion: 4
@@ -449,11 +451,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4544911667577518, guid: 63112f64d16c75b4fbc86e7ba9ac5d6b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 18.68
+      value: 47.88
       objectReference: {fileID: 0}
     - target: {fileID: 4544911667577518, guid: 63112f64d16c75b4fbc86e7ba9ac5d6b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -15.18
+      value: -24.98
       objectReference: {fileID: 0}
     - target: {fileID: 4544911667577518, guid: 63112f64d16c75b4fbc86e7ba9ac5d6b, type: 2}
       propertyPath: m_LocalPosition.z

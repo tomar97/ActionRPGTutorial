@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SlimeController : MonoBehaviour {
@@ -13,13 +14,21 @@ public class SlimeController : MonoBehaviour {
     private float timeToMoveCounter;
     private Vector3 moveDirection;
 
+    public float waitToReload;
+    private bool reloading;
+    private GameObject thePlayer;
+
+
 	// Use this for initialization
 	void Start () {
         myRigidbody = GetComponent<Rigidbody2D>();
 
-        timeBetweenMoveCounter = timeBetweenMove;
-        timeToMoveCounter = timeToMove;
-		
+        //timeBetweenMoveCounter = timeBetweenMove;
+        //timeToMoveCounter = timeToMove;
+
+        timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+        timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
+
 	}
 	
 	// Update is called once per frame
@@ -33,7 +42,8 @@ public class SlimeController : MonoBehaviour {
             if (timeToMoveCounter < 0f)
             {
                 moving = false;
-                timeBetweenMoveCounter = timeBetweenMove;
+                timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+                //timeBetweenMoveCounter = timeBetweenMove;
             }
         }
         else
@@ -43,10 +53,31 @@ public class SlimeController : MonoBehaviour {
             if (timeBetweenMoveCounter < 0f)
             {
                 moving = true;
-                timeToMoveCounter = timeToMove;
+                timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
+                //timeToMoveCounter = timeToMove;
                 moveDirection = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }
-
+        if (reloading)
+        {
+            waitToReload -= Time.deltaTime;
+            if(waitToReload < 0f)
+            {
+                //Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                thePlayer.SetActive(true);
+                reloading = false;
+            }
+        }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            collision.gameObject.SetActive(false);
+            reloading = true;
+            thePlayer = collision.gameObject;
+        }
+    }
 }
